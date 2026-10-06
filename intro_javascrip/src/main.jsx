@@ -1,16 +1,6 @@
-let firstName = "Juan";
-console.log(firstName);
-firstName ="Pedro";
+const soyHello = (name = "juan", edad = 0) => 
+`Hola mundo function ! ${name} edad ${edad}`;
 
-const lastName = "Ruiz";
 
-const condicion = true;
-
-if(condicion){
-  let firstName = "Diego";
-  const lastName = "Luna";
-  console.log(firstName + " " + lastName);
-}
-
-console.log("Hola mundo, " + "soy " + firstName + " " + lastName);
-//console.log(`Hola mundo, soy ${firstName} ${lastName}`);
+const result = soyHello("Gabriel", 20);
+console.log(result);
