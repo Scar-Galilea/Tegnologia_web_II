@@ -1,3 +1,10 @@
+const paper = {
+    product: "Papel",
+    price: 100,
+    quantity: 10,
+}
+
+
 const invoice = [
         {
         
@@ -6,7 +13,7 @@ const invoice = [
         date: new Date(),
         client: {
             id: 1,
-            name: "Jhon",
+            name: "Juan",
             lastName: "Doe",
             ago: 20,
         },
@@ -68,9 +75,7 @@ const invoice = [
         },
         item: [
             {
-                product: "Lapiz",
-                price: 299,
-                quantity: 2,
+                paper
             },
             {
                 product: "Borrador",
@@ -97,3 +102,15 @@ const invoiceByName = invoice.find((i) => {
 });
 console.log(invoiceByName);
 
+// Metodo filter()
+console.log("Aplicacion del metodo filter por id");
+const invoiceFilter = invoice.filter((i) => i.id > 1);
+console.log(invoiceFilter);
+
+// Metodo includes()
+const invoiceFilter2 = invoice.filter((i) => i.item.includes(paper));
+console.log(invoiceFilter2)
+
+// Metodo some()
+const result = invoice.some((i) => i.client.name === "Juan");
+console.log(result);

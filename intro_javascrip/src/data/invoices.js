@@ -75,9 +75,7 @@ const invoice = [
         },
         item: [
             {
-                product: "Lapiz",
-                price: 299,
-                quantity: 2,
+                paper
             },
             {
                 product: "Borrador",
@@ -93,15 +91,12 @@ const invoice = [
     },
 ];
 
-// Metodo filter()
-console.log("Aplicacion del metodo filter por id");
-const invoiceFilter = invoice.filter((i) => i.id > 1);
-console.log(invoiceFilter);
+const invoiceByClient = (clientName) => {
+    return invoice.find((i) => i.client.name === clientName);
+};
 
-// Metodo includes()
-const invoiceFilter2 = invoice.filter((i) => i.item.includes(paper));
-console.log(invoiceFilter2)
-
-// Metodo some()
-const result = invoice.some((i) => i.client.name === "Juan");
-console.log(result);
+export {
+    paper,
+    invoice,
+    invoiceByClient as default,
+} 
