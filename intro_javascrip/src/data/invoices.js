@@ -91,12 +91,33 @@ const invoice = [
     },
 ];
 
-const invoiceByClient = (clientName) => {
+/*const invoiceByClient = (clientName) => {
     return invoice.find((i) => i.client.name === clientName);
 };
+*/
+
+const invoiceById = (id) => {
+    return invoice.find((i) => i.id === id);
+};
+
+
+export const findInvoiceById = (id) => {
+    const promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const result = invoiceById(id);
+
+            if(result){
+                resolve(result);
+            }else{
+                reject("error: no existe la factura con el id ingresado")
+            }
+        }, 2500);
+        });
+    return promise;
+    }
 
 export {
     paper,
     invoice,
-    invoiceByClient as default,
 } 
+
