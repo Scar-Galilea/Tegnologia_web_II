@@ -1,13 +1,9 @@
-// Promesas
-import { findInvoiceById } from "./data/invoices";
+const findALLUsers = async() => {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    const data = await response.json();
+    return data;
+}
 
-findInvoiceById(4)
-    .then((result) => {
-        console.log(result);
-        console.log("Simulando alguna tarea con demora");
-    })
-    .catch((error) => {
-        console.error(error)
-    })
-
-    //findInvoiceById(2).then(console.log).catch(console.error);
+const users = await findALLUsers();
+console.log(users);
+console.log("Hola que tal");
