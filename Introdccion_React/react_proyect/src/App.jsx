@@ -1,10 +1,14 @@
-import MyButton from "./componets/MyButton";
+//import MyButton from "./componets/MyButton";
+//import Profile from "./componets/Profile";
+import RenConditional from "./componets/RenConditional"
+import ShoppingList from "./componets/ShoppingList";
 
 export default function MyApp() {
+  // Codigo JavaScrip
   return (
     <div>
-      <h1>Bienvenido a mi aplicación</h1>
-      <MyButton />
+      <RenConditional/>
+      <ShoppingList/>
     </div>
   );
 }
